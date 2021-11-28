@@ -119,7 +119,7 @@ participants1<-participants1%>%select(FID, IID)
 ###WRITE OUTPUT=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 ###=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
-outdir="/scratch/mf91122/PUFA-GWAS/pheno"
+outdir="/scratch/ahc87874/Fall2021Practice/Project"
 
 #Model 1
 write.table(participants1, 
