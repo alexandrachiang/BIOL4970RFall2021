@@ -10,14 +10,14 @@ source("manyColsToDummy.R")
 
 withdrawn<-read.csv("w48818_20210809.csv", header = FALSE)
 
-QCids<-read.table("/work/kylab/mike/PUFA-GWAS/pheno/bd_QC-keep.txt",header=TRUE)
+QCids<-read.table("/scratch/ahc87874/Fall2021Practice/Project/bd_QC-keep.txt",header=TRUE)
 
 ###-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 #Load data=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 ###-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
 #Load UK Biobank datasets-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
-source('/work/kylab/mike/PUFA-GWAS/pheno/load_UKBphenotables.R') #20 min
+source('/scratch/ahc87874/Fall2021Practice/Project/load_UKBphenotables.R') #20 min
 
 #Phenotypes  ------------------------------------------------------------------------------
 #Covariates 
