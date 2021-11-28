@@ -69,7 +69,7 @@ relatives<-read.table("ukb48818_rel_s488282.dat", header=T)
 #From maximum_set_of_unrelated_individuals.MF.pl output:
 max_unrelated<-read.table("ukb48818_rel_s488282_output.dat")
 max_unrelated<-as.integer(unlist(max_unrelated))
-bd_QC<-bd_QC%>%filter(!FID %in% max_unrelated)
+bd_QC<-bd_QC%>%filter(!IID %in% max_unrelated)
 
 table(bd_QC$Race)
 
