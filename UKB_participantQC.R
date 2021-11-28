@@ -1,12 +1,3 @@
-#!/bin/bash
-#SBATCH --job-name=UKB_participantQC       # Job name
-#SBATCH --partition=highmem_30d_p             # Partition (queue) name
-#SBATCH --ntasks=1                    # Run a single task
-#SBATCH --mem=400gb                     # Job Memory
-#SBATCH --time=200:00:00               # Time limit hrs:min:sec
-#SBATCH --output=UKB_participantQC.%j.out      # Standard output log
-#SBATCH --error=UKB_participantQC.%j.err       # Standard error log
-
 Rload
 R
 setwd("/scratch/ahc87874/Fall2021Practice/Project")
