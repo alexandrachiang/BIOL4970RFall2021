@@ -2,7 +2,7 @@ library(plyr)
 library(dplyr)
 library(tidyverse)
 
-setwd()
+setwd("/scratch/ahc87874/Fall2021Practice/Project")
 
 #The key of this script is solving the problem that if someone has an
 #NA in field 20086 (24hr-recall: special diet followed), it could be 
@@ -10,7 +10,7 @@ setwd()
 #take the 24h recall. This parses out the answer to that question.
 
 #Load UK Biobank datasets-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
-source('../ukb34137_loaddata.r') #15 min
+source('/scratch/ahc87874/Fall2021Practice/Project/ukb34137_loaddata.r') #15 min
 bd <- as_tibble(bd)
 
 #UKB data for people who took the 24hour recall survey
@@ -152,6 +152,6 @@ veg<-Diet%>%select("IID", "Vegb")
 
 colnames(veg)<-c("IID", "Consistent_Self-Reported_Vegetarian_across_all_24hr")
 
-write.table(veg, file = "vegQC1_04032021.txt", 
+write.table(veg, file = "/scratch/ahc87874/Fall2021Practice/Project/vegQC1_04032021.txt", 
             sep = "\t", col.names = TRUE, quote = FALSE,
             row.names = FALSE)
