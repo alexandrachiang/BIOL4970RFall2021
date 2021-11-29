@@ -11,7 +11,7 @@
 
 i=$SLURM_ARRAY_TASK_ID
 
-cd /work/kylab/alex/Fall2021Practice/Project
+cd /scratch/ahc87874/Fall2021Practice/Project
 
 ml PLINK/2.00-alpha2.3-x86_64-20210920-dev
 
