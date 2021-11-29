@@ -15,9 +15,9 @@ outdir="/scratch/ahc87874/Fall2021Practice/Project"
 
 #Model 1
 write.table(participants2, 
-	paste(outdir, "/PUFA_GWAS_phenoQC_IDS_M1_Veg.txt",sep=""), 
+	paste(outdir, "/GWAS_phenoQC_IDS_M1_Veg.txt",sep=""), 
 	row.names=FALSE, quote=FALSE)
 
 write.table(new2, 
-	paste(outdir, "/PUFA_GWAS_pheno_M1_Veg.txt", sep=""),
+	paste(outdir, "/GWAS_pheno_M1_Veg.txt", sep=""),
 	row.names=FALSE, quote=FALSE)
