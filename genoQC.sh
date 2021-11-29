@@ -1,12 +1,12 @@
 #!/bin/bash
 #SBATCH --partition=highmem_p
-#SBATCH --job-name=genoQC-TxS
+#SBATCH --job-name=genoQC
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=16
 #SBATCH --time=144:00:00
 #SBATCH --mem=180000
-#SBATCH --output=genoQC-TxS.%j.out
-#SBATCH --error=genoQC-TxS.%j.err
+#SBATCH --output=genoQC.%j.out
+#SBATCH --error=genoQC.%j.err
 #SBATCH --array=1-22
 
 i=$SLURM_ARRAY_TASK_ID
