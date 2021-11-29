@@ -22,7 +22,7 @@ source('/scratch/ahc87874/Fall2021Practice/Project/load_UKBphenotables.R') #20 m
 #Phenotypes  ------------------------------------------------------------------------------
 #Covariates 
 #Model 1: sex, age, age squared, genotyping array, and assessment center indicators (sites of recruitment); 
-#lipid medication, socioeconomic status measured by Townsend deprivation index;  
+#Cholesterol;  
 
 
 pheno<-bd%>%select(f.eid, f.21003.0.0, f.31.0.0, 
@@ -36,19 +36,15 @@ colnames(pheno)<-c("IID", "Age", "Sex",
                     )
 
 pheno2<-bd_join4%>%select(f.eid,
-                          f.21001.0.0, f.20116.0.0, f.20160.0.0,
-                          f.6177.0.0,f.6153.0.0,
-                          f.23651.0.0, f.23652.0.0, 
-                          f.23653.0.0, f.23654.0.0, f.23655.0.0  
+                          f.21001.0.0, f.30690.0.0, f.30780.0.0,
+			  f.30760.0.0, f.30870.0.0
                           )
 #TFAP = PUFA to total fatty acid percentage
 
 colnames(pheno2)<-c("IID",
-                    "BMI", "SmokeStatus","Ever_smoked",                    
-                    "lipid_med", "lipid_med_plushormones",
-                    "MeasurementQualityFlag", "HighLactate",
-                    "HighPyruvate", "LowGlucose","LowProtein"
-                    )
+                    "BMI", "TotalCholesterol", "LDLCholesterol",
+		    "HDLCholesterol", "Triglycerides"
+		   )
 
 new<-left_join(pheno, pheno2, by="IID")
 new<-as_tibble(new)
@@ -110,7 +106,7 @@ statinoutput<-statinoutput%>%select(IID, statins)
 
 new<-left_join(new, statinoutput, by="IID")
 
-participants1<-new1%>%select(IID)
+participants1<-new%>%select(IID)
 participants1$FID<-participants1$IID
 participants1<-participants1%>%select(FID, IID)
 
@@ -126,6 +122,6 @@ write.table(participants1,
 	paste(outdir, "/PUFA_GWAS_phenoQC_IDS_M1.txt",sep=""), 
 	row.names=FALSE, quote=FALSE)
 
-write.table(new1, 
+write.table(new, 
 	paste(outdir, "/PUFA_GWAS_pheno_M1.txt", sep=""),
 	row.names=FALSE, quote=FALSE)
