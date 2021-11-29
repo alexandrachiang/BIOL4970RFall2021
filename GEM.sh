@@ -40,7 +40,7 @@ echo running "$j" and "$e"
 GEM \
 --bgen $genoindir/chr"$i".bgen \
 --sample $genoindir/chr"$i".sample \
---pheno-file $phenodir/GWAS_phenoQC_IDS_M1_Veg.txt \
+--pheno-file $phenodir/GWAS_pheno_M1_Veg.txt \
 --sampleid-name IID \
 --pheno-name $j \
 --covar-names Age Sex Geno_batch BMI center1 center2 center3 center4 center5 \
