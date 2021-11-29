@@ -1,3 +1,5 @@
+#Add vegetarian columns
+
 library(tidyverse)
 
 setwd("/scratch/ahc87874/Fall2021Practice/Project")
