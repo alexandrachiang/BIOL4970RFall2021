@@ -115,7 +115,7 @@ participants1<-participants1%>%select(FID, IID)
 ###WRITE OUTPUT=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 ###=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
-outdir="/scratch/ahc87874/Fall2021Practice/Project"
+outdir="/scratch/ahc87874/Fall2021Practice/Project/pheno"
 
 #Model 1
 write.table(participants1, 
