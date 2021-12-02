@@ -43,7 +43,8 @@ GEM \
 --pheno-file $phenodir/GWAS_pheno_M1_Veg.csv \
 --sampleid-name IID \
 --pheno-name $j \
---covar-names Age Sex Geno_batch BMI center1 center2 center3 center4 center5 \
+--covar-names Age Sex Geno_batch BMI statins \
+center1 center2 center3 center4 center5 \
 center6 center7 center8 center9 center10 \
 center11 center12 center13 center14 center15 \
 center16 center17 center18 center20 center21 \
