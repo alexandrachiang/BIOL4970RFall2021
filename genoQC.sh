@@ -35,7 +35,7 @@ plink2 \
 --maf 0.01 \
 --autosome \
 --maj-ref \
---keep /scratch/ahc87874/Fall2021Practice/Project/GWAS_phenoQC_IDS_M1_Veg.txt \
+--keep /scratch/ahc87874/Fall2021Practice/Project/pheno/GWAS_phenoQC_IDS_M1_Veg.txt \
 --max-alleles 2 \
 --export bgen-1.2 bits=8 \
 --out "$outdir"/chr"$i"
