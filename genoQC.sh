@@ -22,7 +22,7 @@ echo "-=-=-=-=-=-=-=-STEP 1-=-=-=-=-=-=-=-\n\n"
 
 genoindir=("/scratch/ahc87874/bgen_v1.2_UKBsource")
 mfiscoredir=("/scratch/ahc87874/Fall2021Practice/UKBpgen/mfi")
-outdir=("/scratch/ahc87874/Fall2021Practice/Project/GEM1")
+outdir=("/scratch/ahc87874/Fall2021Practice/Project/GEM")
 mkdir -p $outdir
 
 plink2 \
