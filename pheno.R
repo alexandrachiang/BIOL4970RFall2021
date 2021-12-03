@@ -110,16 +110,6 @@ participants1<-new%>%select(IID)
 participants1$FID<-participants1$IID
 participants1<-participants1%>%select(FID, IID)
 
-#=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-
-#PCs
-pan<-read_tsv("/scratch/ahc87874/Fall2021Practice/Project/all_pops_non_eur_pruned_within_pop_pc_covs.tsv")
-pan<-as_tibble(pan)
-pan$s<-as.integer(pan$s)
-table(pan$pop, useNA = "always")
-
-
-
 ###=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 ###WRITE OUTPUT=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 ###=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
