@@ -19,6 +19,7 @@ new2<-as_tibble(inner_join(new, vegqc3, by="IID"))
 pan<-read_tsv("/scratch/ahc87874/Fall2021Practice/Project/all_pops_non_eur_pruned_within_pop_pc_covs.tsv")
 pan<-as_tibble(pan)
 pan$s<-as.integer(pan$s)
+colnames(pan)[1]<-"IID"
 table(pan$pop, useNA = "always")
 
 #Inner join
