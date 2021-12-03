@@ -37,6 +37,8 @@ new3<-as_tibble(inner_join(new3, pan, by="s"))
 
 #=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
+participants3 <- participants3 %>% select("FID", "IID")
+
 #Output
 outdir="/scratch/ahc87874/Fall2021Practice/Project"
 
