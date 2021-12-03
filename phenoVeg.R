@@ -25,15 +25,12 @@ bridge<-read.table("/scratch/ahc87874/Fall2021Practice/Project/ukb48818bridge310
 bridge<-as_tibble(bridge)
 colnames(bridge)<-c("IID", "panID")
 
-pan2<-pan%>%select(s, pop)%>%
+pan2<-pan%>%select(s, pop, PC1, PC2, PC3, PC4, PC5, PC6, PC7, PC8, PC9, PC10)%>%
     left_join(bridge, by=c("s"="panID"))
 
 #Inner join
 participants3<-as_tibble(inner_join(participants2, pan2, by="IID"))
 new3<-as_tibble(inner_join(new2, pan2, by="IID"))
-
-participants3<-as_tibble(inner_join(participants3, pan, by="s"))
-new3<-as_tibble(inner_join(new3, pan, by="s"))
 
 #=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
