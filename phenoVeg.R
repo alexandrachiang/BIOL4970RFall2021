@@ -51,4 +51,4 @@ write.table(new3,
 	row.names=FALSE, quote=FALSE)
 
 write.csv(new3, 
-	paste(outdir, "/GWAS_pheno_M1_Veg.csv")
+	paste(outdir, "/GWAS_pheno_M1_Veg.csv", sep=""))
