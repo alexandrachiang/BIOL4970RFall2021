@@ -19,12 +19,21 @@ new2<-as_tibble(inner_join(new, vegqc3, by="IID"))
 pan<-read_tsv("/scratch/ahc87874/Fall2021Practice/Project/all_pops_non_eur_pruned_within_pop_pc_covs.tsv")
 pan<-as_tibble(pan)
 pan$s<-as.integer(pan$s)
-colnames(pan)[1]<-"IID"
 table(pan$pop, useNA = "always")
 
+bridge<-read.table("/scratch/ahc87874/Fall2021Practice/Project/ukb48818bridge31063.txt")
+bridge<-as_tibble(bridge)
+colnames(bridge)<-c("IID", "panID")
+
+pan2<-pan%>%select(s, pop)%>%
+    left_join(bridge, by=c("s"="panID"))
+
 #Inner join
-participants3<-as_tibble(inner_join(participants2, pan, by="IID"))
-new3<-as_tibble(inner_join(new2, pan, by="IID"))
+participants3<-as_tibble(inner_join(participants2, pan2, by="IID"))
+new3<-as_tibble(inner_join(new2, pan2, by="IID"))
+
+participants3<-as_tibble(inner_join(participants3, pan, by="s"))
+new3<-as_tibble(inner_join(new3, pan, by="s"))
 
 #=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
