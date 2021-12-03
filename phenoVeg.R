@@ -40,12 +40,11 @@ participants3 <- participants3 %>% select("FID", "IID")
 outdir="/scratch/ahc87874/Fall2021Practice/Project/pheno"
 
 write.table(participants3, 
-	paste(outdir, "/GWAS_phenoQC_IDS_M1_Veg.txt",sep=""), 
+	paste(outdir, "/GWAS_phenoQC_IDS_M1_Veg.txt", sep=""), 
 	row.names=FALSE, quote=FALSE)
 
 write.table(new3, 
 	paste(outdir, "/GWAS_pheno_M1_Veg.txt", sep=""),
 	row.names=FALSE, quote=FALSE)
 
-write.csv(new3, 
-	paste(outdir, "/GWAS_pheno_M1_Veg.csv", sep=""))
+write.csv(new2, "GWAS_pheno_M1_Veg.csv", quote=FALSE, row.names=FALSE)
