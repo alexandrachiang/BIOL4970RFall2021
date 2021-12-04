@@ -58,7 +58,7 @@ xlab1 <-paste(levels(pheno$CSRV[!is.na(pheno$TotalCholesterol) & !is.na(pheno$CS
 graphCSRVTotal <-
 ggplot(data = pheno[!is.na(pheno$CSRV),], aes(x = CSRV, y = TotalCholesterol, fill = CSRV, color = CSRV)) + 
   geom_boxplot(alpha = 0.3) + 
-    ylim(0, 20) + 
+    ylim(0, 17) + 
   labs(fill = "Diet",
        x = "CSRV",
        y = "Total Cholesterol (mmol/L)",
@@ -88,7 +88,7 @@ xlab3 <-paste(levels(pheno$SSRV[!is.na(pheno$TotalCholesterol) & !is.na(pheno$SS
 graphSSRVTotal <-
 ggplot(data = pheno[!is.na(pheno$SSRV),], aes(x = SSRV, y = TotalCholesterol, fill = SSRV, color = SSRV)) + 
   geom_boxplot(alpha = 0.3) + 
-    ylim(0, 20) + 
+    ylim(0, 17) + 
   labs(fill = "Diet",
        x = "SSRV",
        y = "Total Cholesterol (mmol/L)",
@@ -118,7 +118,7 @@ xlab5 <-paste(levels(pheno$CSRV[!is.na(pheno$LDLCholesterol) & !is.na(pheno$CSRV
 graphCSRVLDL <-
 ggplot(data = pheno[!is.na(pheno$CSRV),], aes(x = CSRV, y = LDLCholesterol, fill = CSRV, color = CSRV)) + 
   geom_boxplot(alpha = 0.3) + 
-    ylim(0, 20) + 
+    ylim(0, 10) + 
   labs(fill = "Diet",
        x = "CSRV",
        y = "LDL Cholesterol (mmol/L)",
@@ -148,7 +148,7 @@ xlab7 <-paste(levels(pheno$SSRV[!is.na(pheno$LDLCholesterol) & !is.na(pheno$SSRV
 graphSSRVLDL <-
 ggplot(data = pheno[!is.na(pheno$SSRV),], aes(x = SSRV, y = LDLCholesterol, fill = SSRV, color = SSRV)) + 
   geom_boxplot(alpha = 0.3) + 
-    ylim(0, 20) + 
+    ylim(0, 10) + 
   labs(fill = "Diet",
        x = "SSRV",
        y = "LDL Cholesterol (mmol/L)",
@@ -178,7 +178,7 @@ xlab9 <-paste(levels(pheno$CSRV[!is.na(pheno$HDLCholesterol) & !is.na(pheno$CSRV
 graphCSRVHDL <-
 ggplot(data = pheno[!is.na(pheno$CSRV),], aes(x = CSRV, y = HDLCholesterol, fill = CSRV, color = CSRV)) + 
   geom_boxplot(alpha = 0.3) + 
-    ylim(0, 20) + 
+    ylim(0, 4.3) + 
   labs(fill = "Diet",
        x = "CSRV",
        y = "HDL Cholesterol (mmol/L)",
@@ -208,7 +208,7 @@ xlab11 <-paste(levels(pheno$SSRV[!is.na(pheno$HDLCholesterol) & !is.na(pheno$SSR
 graphSSRVHDL <-
 ggplot(data = pheno[!is.na(pheno$SSRV),], aes(x = SSRV, y = HDLCholesterol, fill = SSRV, color = SSRV)) + 
   geom_boxplot(alpha = 0.3) + 
-    ylim(0, 20) + 
+    ylim(0, 4.3) + 
   labs(fill = "Diet",
        x = "SSRV",
        y = "HDL Cholesterol (mmol/L)",
@@ -238,7 +238,7 @@ xlab13 <-paste(levels(pheno$CSRV[!is.na(pheno$Triglycerides) & !is.na(pheno$CSRV
 graphCSRVTri <-
 ggplot(data = pheno[!is.na(pheno$CSRV),], aes(x = CSRV, y = Triglycerides, fill = CSRV, color = CSRV)) + 
   geom_boxplot(alpha = 0.3) + 
-    ylim(0, 20) + 
+    ylim(0, 12) + 
   labs(fill = "Diet",
        x = "CSRV",
        y = "Triglycerides (mmol/L)",
@@ -268,7 +268,7 @@ xlab15 <-paste(levels(pheno$SSRV[!is.na(pheno$Triglycerides) & !is.na(pheno$SSRV
 graphSSRVTri <-
 ggplot(data = pheno[!is.na(pheno$SSRV),], aes(x = SSRV, y = Triglycerides, fill = SSRV, color = SSRV)) + 
   geom_boxplot(alpha = 0.3) + 
-    ylim(0, 20) + 
+    ylim(0, 12) + 
   labs(fill = "Diet",
        x = "SSRV",
        y = "Triglycerides (mmol/L)",
