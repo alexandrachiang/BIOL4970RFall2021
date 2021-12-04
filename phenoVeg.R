@@ -47,4 +47,4 @@ write.table(new3,
 	paste(outdir, "/GWAS_pheno_M1_Veg.txt", sep=""),
 	row.names=FALSE, quote=FALSE)
 
-write.csv(new2, "/GWAS_pheno_M1_Veg.csv", quote=FALSE, row.names=FALSE)
+write.csv(new3, "GWAS_pheno_M1_Veg.csv", quote=FALSE, row.names=FALSE)
