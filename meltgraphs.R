@@ -253,8 +253,8 @@ dev.off()
 
 #=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
-##Relationship of Tri Cholesterol
-##Relationship of CSRV & Tri Cholesterol
+##Relationship of Triglyceride
+##Relationship of CSRV & Triglyceride
 meannonveg1 <- signif(mean(CSRVTri$value[CSRVTri$CSRV=="Non-Vegetarian" & CSRVTri$Sex=="Both"], na.rm=TRUE), digits = 5)
 meanveg1 <- signif(mean(CSRVTri$value[CSRVTri$CSRV=="Vegetarian" & CSRVTri$Sex=="Both"], na.rm=TRUE), digits = 5)
 meannonvegF1 <- signif(mean(CSRVTri$value[CSRVTri$CSRV=="Non-Vegetarian" & CSRVTri$Sex=="Female"], na.rm=TRUE), digits = 5)
@@ -291,84 +291,7 @@ png(filename="CSRVvsTri.png", type="cairo", width=600, height=300)
 graphCSRVTri
 dev.off()
 
-##Relationship of SSRV & Tri Cholesterol
-meannonveg1 <- signif(mean(SSRVTri$value[SSRVTri$SSRV=="Non-Vegetarian" & SSRVTri$Sex=="Both"], na.rm=TRUE), digits = 5)
-meanveg1 <- signif(mean(SSRVTri$value[SSRVTri$SSRV=="Vegetarian" & SSRVTri$Sex=="Both"], na.rm=TRUE), digits = 5)
-meannonvegF1 <- signif(mean(SSRVTri$value[SSRVTri$SSRV=="Non-Vegetarian" & SSRVTri$Sex=="Female"], na.rm=TRUE), digits = 5)
-meanvegF1 <- signif(mean(SSRVTri$value[SSRVTri$SSRV=="Vegetarian" & SSRVTri$Sex=="Female"], na.rm=TRUE), digits = 5)
-meannonvegM1 <- signif(mean(SSRVTri$value[SSRVTri$SSRV=="Non-Vegetarian" & SSRVTri$Sex=="Male"], na.rm=TRUE), digits = 5)
-meanvegM1 <- signif(mean(SSRVTri$value[SSRVTri$SSRV=="Vegetarian" & SSRVTri$Sex=="Male"], na.rm=TRUE), digits = 5)
-    
-xlab1 <-paste(levels(SSRVTri$Sex),"\n(N=",table(SSRVTri$Sex),")",sep="")
-
-graphSSRVTri<- ggplot(data = SSRVTri, aes(x = Sex, y = value, fill = SSRV, color = SSRV)) + 
-  geom_boxplot(alpha = 0.3, position = "identity") + 
-    ylim(0, 17) + 
-  labs(fill = "SSRV",
-       x = "Sex",
-       y = "Triglyceride (mmol/L)",
-       title = "Relationship of SSRV & Triglyceride",
-       subtitle = paste(
-         " p-value <", 2.2e-16,
-         "\n n =", nrow(SSRVTri)/2,
-         sep = " ")) +
-  stat_summary(fun = mean, geom = "point", shape = 18, size = 3) +
-  annotate("text", x = 2.5, y = meannonveg1+1, label = meannonveg1, color = "#F8766D") +
-  annotate("text", x = 1.5, y = meannonvegF1+1, label = meannonvegM1, color = "#F8766D") +
-  annotate("text", x = 0.5, y = meannonvegM1+1, label = meannonvegF1, color = "#F8766D") +
-  annotate("text", x = 2.5, y = meanveg1-1, label = meanveg1, color = "#00BA38") +
-  annotate("text", x = 1.5, y = meanvegF1-1, label = meanvegM1, color = "#00BA38") +
-  annotate("text", x = 0.5, y = meanvegM1-1, label = meanvegF1, color = "#00BA38") +
-  scale_fill_manual(values = c("#F8766D", "#00BA38")) +
-  scale_color_manual(values = c("#F8766D", "#00BA38")) +
-  scale_x_discrete(labels = xlab1) + 
-  coord_flip()
-
-png(filename="SSRVvsTri.png", type="cairo", width=600, height=300)
-graphSSRVTri
-dev.off()
-
-#=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-
-##Relationship of Tri Cholesterol
-##Relationship of CSRV & Tri Cholesterol
-meannonveg1 <- signif(mean(CSRVTri$value[CSRVTri$CSRV=="Non-Vegetarian" & CSRVTri$Sex=="Both"], na.rm=TRUE), digits = 5)
-meanveg1 <- signif(mean(CSRVTri$value[CSRVTri$CSRV=="Vegetarian" & CSRVTri$Sex=="Both"], na.rm=TRUE), digits = 5)
-meannonvegF1 <- signif(mean(CSRVTri$value[CSRVTri$CSRV=="Non-Vegetarian" & CSRVTri$Sex=="Female"], na.rm=TRUE), digits = 5)
-meanvegF1 <- signif(mean(CSRVTri$value[CSRVTri$CSRV=="Vegetarian" & CSRVTri$Sex=="Female"], na.rm=TRUE), digits = 5)
-meannonvegM1 <- signif(mean(CSRVTri$value[CSRVTri$CSRV=="Non-Vegetarian" & CSRVTri$Sex=="Male"], na.rm=TRUE), digits = 5)
-meanvegM1 <- signif(mean(CSRVTri$value[CSRVTri$CSRV=="Vegetarian" & CSRVTri$Sex=="Male"], na.rm=TRUE), digits = 5)
-    
-xlab1 <-paste(levels(CSRVTri$Sex),"\n(N=",table(CSRVTri$Sex),")",sep="")
-
-graphCSRVTri<- ggplot(data = CSRVTri, aes(x = Sex, y = value, fill = CSRV, color = CSRV)) + 
-  geom_boxplot(alpha = 0.3, position = "identity") + 
-    ylim(0, 17) + 
-  labs(fill = "CSRV",
-       x = "Sex",
-       y = "Triglyceride (mmol/L)",
-       title = "Relationship of CSRV & Triglyceride",
-       subtitle = paste(
-         " p-value <", 2.2e-16,
-         "\n n =", nrow(CSRVTri)/2,
-         sep = " ")) +
-  stat_summary(fun = mean, geom = "point", shape = 18, size = 3) +
-  annotate("text", x = 2.5, y = meannonveg1+1, label = meannonveg1, color = "#F8766D") +
-  annotate("text", x = 1.5, y = meannonvegF1+1, label = meannonvegM1, color = "#F8766D") +
-  annotate("text", x = 0.5, y = meannonvegM1+1, label = meannonvegF1, color = "#F8766D") +
-  annotate("text", x = 2.5, y = meanveg1-1, label = meanveg1, color = "#00BA38") +
-  annotate("text", x = 1.5, y = meanvegF1-1, label = meanvegM1, color = "#00BA38") +
-  annotate("text", x = 0.5, y = meanvegM1-1, label = meanvegF1, color = "#00BA38") +
-  scale_fill_manual(values = c("#F8766D", "#00BA38")) +
-  scale_color_manual(values = c("#F8766D", "#00BA38")) +
-  scale_x_discrete(labels = xlab1) + 
-  coord_flip()
-
-png(filename="CSRVvsTri.png", type="cairo", width=600, height=300)
-graphCSRVTri
-dev.off()
-
-##Relationship of SSRV & Tri Cholesterol
+##Relationship of SSRV & Triglyceride
 meannonveg1 <- signif(mean(SSRVTri$value[SSRVTri$SSRV=="Non-Vegetarian" & SSRVTri$Sex=="Both"], na.rm=TRUE), digits = 5)
 meanveg1 <- signif(mean(SSRVTri$value[SSRVTri$SSRV=="Vegetarian" & SSRVTri$Sex=="Both"], na.rm=TRUE), digits = 5)
 meannonvegF1 <- signif(mean(SSRVTri$value[SSRVTri$SSRV=="Non-Vegetarian" & SSRVTri$Sex=="Female"], na.rm=TRUE), digits = 5)
