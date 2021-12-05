@@ -1,12 +1,12 @@
 #!/bin/bash
 #SBATCH --partition=batch
-#SBATCH --job-name=GEMSSRVvsTotal
+#SBATCH --job-name=GEMSSRVvsLDL
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=16
 #SBATCH --time=144:00:00
 #SBATCH --mem=30000
-#SBATCH --output=GEMSSRVvsTotal.%j.out
-#SBATCH --error=GEMSSRVvsTotal.%j.err
+#SBATCH --output=GEMSSRVvsLDL.%j.out
+#SBATCH --error=GEMSSRVvsLDL.%j.err
 #SBATCH --array=1-22
 
 i=$SLURM_ARRAY_TASK_ID
@@ -19,10 +19,10 @@ ml GEM/1.4.1-foss-2019b
 
 genoindir=("/scratch/ahc87874/Fall2021Practice/Project/genoQC")
 phenodir=("/scratch/ahc87874/Fall2021Practice/Project/pheno")
-outdir=("/scratch/ahc87874/Fall2021Practice/Project/GEMsingle")
+outdir=("/scratch/ahc87874/Fall2021Practice/Project/GEMsingle/SSRVvsLDL")
 
-phenotypes=("TotalCholesterol")
-#"LDLCholesterol" "HDLCholesterol" "Triglycerides"
+phenotypes=("LDLCholesterol")
+#"TotalCholesterol" "HDLCholesterol" "Triglycerides"
 
 exposures=("Self_Reported_Vegetarian_plus_strict_initial_and24")
 #"Consistent_Self_Reported_Vegetarian_across_all_24hr" 
