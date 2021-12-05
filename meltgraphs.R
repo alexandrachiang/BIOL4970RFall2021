@@ -112,7 +112,7 @@ xlab1 <-paste(levels(CSRVLDL$Sex),"\n(N=",table(CSRVLDL$Sex),")",sep="")
 
 graphCSRVLDL<- ggplot(data = CSRVLDL, aes(x = Sex, y = value, fill = CSRV, color = CSRV)) + 
   geom_boxplot(alpha = 0.3, position = "identity") + 
-    ylim(0, 17) + 
+    ylim(0, 10) + 
   labs(fill = "CSRV",
        x = "Sex",
        y = "LDL Cholesterol (mmol/L)",
@@ -149,7 +149,7 @@ xlab1 <-paste(levels(SSRVLDL$Sex),"\n(N=",table(SSRVLDL$Sex),")",sep="")
 
 graphSSRVLDL<- ggplot(data = SSRVLDL, aes(x = Sex, y = value, fill = SSRV, color = SSRV)) + 
   geom_boxplot(alpha = 0.3, position = "identity") + 
-    ylim(0, 17) + 
+    ylim(0, 10) + 
   labs(fill = "SSRV",
        x = "Sex",
        y = "LDL Cholesterol (mmol/L)",
@@ -189,7 +189,7 @@ xlab1 <-paste(levels(CSRVHDL$Sex),"\n(N=",table(CSRVHDL$Sex),")",sep="")
 
 graphCSRVHDL<- ggplot(data = CSRVHDL, aes(x = Sex, y = value, fill = CSRV, color = CSRV)) + 
   geom_boxplot(alpha = 0.3, position = "identity") + 
-    ylim(0, 17) + 
+    ylim(0, 4.3) + 
   labs(fill = "CSRV",
        x = "Sex",
        y = "HDL Cholesterol (mmol/L)",
@@ -226,7 +226,7 @@ xlab1 <-paste(levels(SSRVHDL$Sex),"\n(N=",table(SSRVHDL$Sex),")",sep="")
 
 graphSSRVHDL<- ggplot(data = SSRVHDL, aes(x = Sex, y = value, fill = SSRV, color = SSRV)) + 
   geom_boxplot(alpha = 0.3, position = "identity") + 
-    ylim(0, 17) + 
+    ylim(0, 4.3) + 
   labs(fill = "SSRV",
        x = "Sex",
        y = "HDL Cholesterol (mmol/L)",
@@ -266,7 +266,7 @@ xlab1 <-paste(levels(CSRVTri$Sex),"\n(N=",table(CSRVTri$Sex),")",sep="")
 
 graphCSRVTri<- ggplot(data = CSRVTri, aes(x = Sex, y = value, fill = CSRV, color = CSRV)) + 
   geom_boxplot(alpha = 0.3, position = "identity") + 
-    ylim(0, 17) + 
+    ylim(0, 12) + 
   labs(fill = "CSRV",
        x = "Sex",
        y = "Triglyceride (mmol/L)",
@@ -303,7 +303,7 @@ xlab1 <-paste(levels(SSRVTri$Sex),"\n(N=",table(SSRVTri$Sex),")",sep="")
 
 graphSSRVTri<- ggplot(data = SSRVTri, aes(x = Sex, y = value, fill = SSRV, color = SSRV)) + 
   geom_boxplot(alpha = 0.3, position = "identity") + 
-    ylim(0, 17) + 
+    ylim(0, 12) + 
   labs(fill = "SSRV",
        x = "Sex",
        y = "Triglyceride (mmol/L)",
