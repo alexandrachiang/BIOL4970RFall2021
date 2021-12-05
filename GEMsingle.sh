@@ -19,7 +19,7 @@ ml GEM/1.4.1-foss-2019b
 
 genoindir=("/scratch/ahc87874/Fall2021Practice/Project/genoQC")
 phenodir=("/scratch/ahc87874/Fall2021Practice/Project/pheno")
-outdir=("/scratch/ahc87874/Fall2021Practice/Project/GEM")
+outdir=("/scratch/ahc87874/Fall2021Practice/Project/GEMsingle")
 
 phenotypes=("TotalCholesterol")
 #"LDLCholesterol" "HDLCholesterol" "Triglycerides"
