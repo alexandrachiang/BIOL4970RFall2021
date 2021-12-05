@@ -1,12 +1,12 @@
 #!/bin/bash
 #SBATCH --partition=batch
-#SBATCH --job-name=GEM
+#SBATCH --job-name=GEMSSRVvsTotal
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=16
 #SBATCH --time=144:00:00
 #SBATCH --mem=30000
-#SBATCH --output=GEM.%j.out
-#SBATCH --error=GEM.%j.err
+#SBATCH --output=GEMSSRVvsTotal.%j.out
+#SBATCH --error=GEMSSRVvsTotal.%j.err
 #SBATCH --array=1-22
 
 i=$SLURM_ARRAY_TASK_ID
@@ -21,10 +21,11 @@ genoindir=("/scratch/ahc87874/Fall2021Practice/Project/genoQC")
 phenodir=("/scratch/ahc87874/Fall2021Practice/Project/pheno")
 outdir=("/scratch/ahc87874/Fall2021Practice/Project/GEM")
 
-phenotypes=("TotalCholesterol" "LDLCholesterol" "HDLCholesterol" "Triglycerides")
+phenotypes=("TotalCholesterol")
+#"LDLCholesterol" "HDLCholesterol" "Triglycerides"
 
-exposures=("Consistent_Self_Reported_Vegetarian_across_all_24hr" "Self_Reported_Vegetarian_plus_strict_initial_and24")
-
+exposures=("Self_Reported_Vegetarian_plus_strict_initial_and24")
+#"Consistent_Self_Reported_Vegetarian_across_all_24hr" 
 
 for j in ${phenotypes[@]} 
         do
