@@ -170,3 +170,5 @@ table(vegqc3$Self_Reported_Vegetarian_plus_strict_initial_and24, useNA = "always
 write.table(vegqc3, file = "vegQC2_04032021.txt", 
             sep = "\t", col.names = TRUE, quote = FALSE,
             row.names = FALSE)
+
+#210,933 total
