@@ -199,10 +199,10 @@ graphCSRVHDL<- ggplot(data = CSRVHDL, aes(x = Sex, y = value, fill = CSRV, color
          "\n n =", nrow(CSRVHDL)/2,
          sep = " ")) +
   stat_summary(fun = mean, geom = "point", shape = 18, size = 3) +
-  annotate("text", x = 2.5, y = meannonveg1+1, label = meannonveg1, color = "#F8766D") +
+  annotate("text", x = 2.5, y = meannonveg1-1, label = meannonveg1, color = "#F8766D") +
   annotate("text", x = 1.5, y = meannonvegF1+1, label = meannonvegM1, color = "#F8766D") +
   annotate("text", x = 0.5, y = meannonvegM1+1, label = meannonvegF1, color = "#F8766D") +
-  annotate("text", x = 2.5, y = meanveg1-1, label = meanveg1, color = "#00BA38") +
+  annotate("text", x = 2.5, y = meanveg1+1, label = meanveg1, color = "#00BA38") +
   annotate("text", x = 1.5, y = meanvegF1-1, label = meanvegM1, color = "#00BA38") +
   annotate("text", x = 0.5, y = meanvegM1-1, label = meanvegF1, color = "#00BA38") +
   scale_fill_manual(values = c("#F8766D", "#00BA38")) +
@@ -278,10 +278,10 @@ graphCSRVTri<- ggplot(data = CSRVTri, aes(x = Sex, y = value, fill = CSRV, color
   stat_summary(fun = mean, geom = "point", shape = 18, size = 3) +
   annotate("text", x = 2.5, y = meannonveg1+1, label = meannonveg1, color = "#F8766D") +
   annotate("text", x = 1.5, y = meannonvegF1+1, label = meannonvegM1, color = "#F8766D") +
-  annotate("text", x = 0.5, y = meannonvegM1+1, label = meannonvegF1, color = "#F8766D") +
+  annotate("text", x = 0.5, y = meannonvegM1-1, label = meannonvegF1, color = "#F8766D") +
   annotate("text", x = 2.5, y = meanveg1-1, label = meanveg1, color = "#00BA38") +
   annotate("text", x = 1.5, y = meanvegF1-1, label = meanvegM1, color = "#00BA38") +
-  annotate("text", x = 0.5, y = meanvegM1-1, label = meanvegF1, color = "#00BA38") +
+  annotate("text", x = 0.5, y = meanvegM1+1, label = meanvegF1, color = "#00BA38") +
   scale_fill_manual(values = c("#F8766D", "#00BA38")) +
   scale_color_manual(values = c("#F8766D", "#00BA38")) +
   scale_x_discrete(labels = xlab1) + 
@@ -313,12 +313,12 @@ graphSSRVTri<- ggplot(data = SSRVTri, aes(x = Sex, y = value, fill = SSRV, color
          "\n n =", nrow(SSRVTri)/2,
          sep = " ")) +
   stat_summary(fun = mean, geom = "point", shape = 18, size = 3) +
-  annotate("text", x = 2.5, y = meannonveg1+1, label = meannonveg1, color = "#F8766D") +
-  annotate("text", x = 1.5, y = meannonvegF1+1, label = meannonvegM1, color = "#F8766D") +
-  annotate("text", x = 0.5, y = meannonvegM1+1, label = meannonvegF1, color = "#F8766D") +
-  annotate("text", x = 2.5, y = meanveg1-1, label = meanveg1, color = "#00BA38") +
-  annotate("text", x = 1.5, y = meanvegF1-1, label = meanvegM1, color = "#00BA38") +
-  annotate("text", x = 0.5, y = meanvegM1-1, label = meanvegF1, color = "#00BA38") +
+  annotate("text", x = 2.5, y = meannonveg1-1, label = meannonveg1, color = "#F8766D") +
+  annotate("text", x = 1.5, y = meannonvegF1-1, label = meannonvegM1, color = "#F8766D") +
+  annotate("text", x = 0.5, y = meannonvegM1-1, label = meannonvegF1, color = "#F8766D") +
+  annotate("text", x = 2.5, y = meanveg1+1, label = meanveg1, color = "#00BA38") +
+  annotate("text", x = 1.5, y = meanvegF1+1, label = meanvegM1, color = "#00BA38") +
+  annotate("text", x = 0.5, y = meanvegM1+1, label = meanvegF1, color = "#00BA38") +
   scale_fill_manual(values = c("#F8766D", "#00BA38")) +
   scale_color_manual(values = c("#F8766D", "#00BA38")) +
   scale_x_discrete(labels = xlab1) + 
