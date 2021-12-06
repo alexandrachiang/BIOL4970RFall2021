@@ -45,6 +45,8 @@ SSRVTotal<-phenoSSRV[phenoSSRV$variable=="TotalCholesterol",]
 SSRVLDL<-phenoSSRV[phenoSSRV$variable=="LDLCholesterol",]
 SSRVHDL<-phenoSSRV[phenoSSRV$variable=="HDLCholesterol",]
 SSRVTri<-phenoSSRV[phenoSSRV$variable=="Triglycerides",]
+
+setwd("/scratch/ahc87874/Fall2021Practice/Project/graphs")
                
 #=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
