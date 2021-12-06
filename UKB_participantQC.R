@@ -77,3 +77,5 @@ QCkeepparticipants<-bd_QC%>%select(IID)
 
 write.table(QCkeepparticipants, file= "/scratch/ahc87874/Fall2021Practice/Project/bd_QC-keep.txt",
             row.names = FALSE, quote = FALSE)
+
+#356,980 participants
