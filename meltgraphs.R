@@ -1,3 +1,29 @@
+library(tidyverse)
+library(plyr)
+library(dplyr)
+library(ggnewscale)
+library(utils)
+library(reshape2)
+
+setwd("/scratch/ahc87874/Fall2021Practice/Project/pheno")
+
+pheno<-as_tibble(read.csv("GWAS_pheno_M1_Veg.csv"))
+
+colnames(pheno)[35]<-"CSRV"
+colnames(pheno)[36]<-"SSRV"
+
+pheno$Sex[pheno$Sex==0] <- "Female"
+pheno$Sex[pheno$Sex==1] <- "Male"
+pheno$Sex <- as.factor(pheno$Sex)
+ 
+pheno$CSRV[pheno$CSRV==0] <- "Non-Vegetarian"
+pheno$CSRV[pheno$CSRV==1] <- "Vegetarian"
+pheno$CSRV <- as.factor(pheno$CSRV)
+
+pheno$SSRV[pheno$SSRV==0] <- "Non-Vegetarian"
+pheno$SSRV[pheno$SSRV==1] <- "Vegetarian"
+pheno$SSRV <- as.factor(pheno$SSRV)
+
 phenomelt <- melt(pheno, id.vars = c("CSRV", "SSRV", "Sex"), 
                          measure.vars = c("TotalCholesterol", "LDLCholesterol", "HDLCholesterol", "Triglycerides"))
 
