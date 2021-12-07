@@ -12,8 +12,8 @@ pheno<-as_tibble(read.csv("GWAS_pheno_M1_Veg.csv"))
 colnames(pheno)[35]<-"CSRV"
 colnames(pheno)[36]<-"SSRV"
 
-pheno$Sex[pheno$Sex==0] <- "Female"
-pheno$Sex[pheno$Sex==1] <- "Male"
+pheno$Sex[pheno$Sex==1] <- "Female"
+pheno$Sex[pheno$Sex==0] <- "Male"
 pheno$Sex <- as.factor(pheno$Sex)
  
 pheno$CSRV[pheno$CSRV==0] <- "Non-Vegetarian"
