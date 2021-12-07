@@ -2,10 +2,14 @@ library(tidyverse)
 library(qqman)
 
 indir="/scratch/ahc87874/Fall2021Practice/Project/GEM/TotalCholesterol"
+#"TotalCholesterol" "LDLCholesterol" "HDLCholesterol" "Triglycerides"
 outdir="/scratch/ahc87874/Fall2021Practice/Project/manplots"
 
 for (i in 1:22) {
-infile<-read.table(paste(indir, paste("TotalCholesterolxConsistent_Self_Reported_Vegetarian_across_all_24hr-chr", i, sep=""), sep="/"), header=TRUE, stringsAsFactors=FALSE)
+infile<-read.table(paste(indir, paste("TotalCholesterolxSelf_Reported_Vegetarian_plus_strict_initial_and24-chr", i, sep=""), sep="/"), header=TRUE, stringsAsFactors=FALSE)
+#"TotalCholesterolxConsistent_Self_Reported_Vegetarian_across_all_24hr-chr" "TotalCholesterolxSelf_Reported_Vegetarian_plus_strict_initial_and24-chr"
+#"LDLCholesterolxConsistent_Self_Reported_Vegetarian_across_all_24hr-chr" "LDLCholesterolxSelf_Reported_Vegetarian_plus_strict_initial_and24-chr"
+	
 infile<-as_tibble(infile) 
   
 #names(infile)<-c("CHROM", "POS", "ID", "REF", "ALT", "A1", "TEST", "OBS_CT", "BETA", "SE", "T_STAT", "P", "ERRCODE")
@@ -45,14 +49,15 @@ if (i == 1) {
 }
 
 #Make manhattan plot
-plotoutputfile<-paste(outdir, "/TotalCholesterolxConsistent_Self_Reported_Vegetarian_across_all_24hr.png", sep="")
+plotoutputfile<-paste(outdir, "/TotalCholesterolxSelf_Reported_Vegetarian_plus_strict_initial_and24.png", sep="")
 
 png(filename=plotoutputfile, type="cairo")
-manhattan(infileall, ylim=c(0,200), col = c("firebrick1", "black"), cex = 0.6)
+manhattan(infileall, ylim=c(0,200), col = c("deepskyblue1", "black"), cex = 0.6)
+#firebrick1 deepskyblue1
 dev.off()
 
 #Make table of sig SNPs (P < 5e-8)
 sigSNPs<-infileall%>%filter(P<=5e-8)
 write.table(sigSNPs, 
-	paste(outdir, "/TotalxCSRVsigSNPs.txt", sep=""),
+	paste(outdir, "/TotalxSSRVsigSNPs.txt", sep=""),
 	row.names=FALSE, quote=FALSE)
