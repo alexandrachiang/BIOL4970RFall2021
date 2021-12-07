@@ -17,15 +17,15 @@ cd /scratch/ahc87874/Fall2021Practice/Project
 ml GEM/1.4.1-foss-2019b
 
 
-genoindir=("/scratch/ahc87874/Fall2021Practice/Project/genoQC")
-phenodir=("/scratch/ahc87874/Fall2021Practice/Project/pheno")
-outdir=("/scratch/ahc87874/Fall2021Practice/Project/GEMsingle/SSRVvsTri")
+genoindir=("/scratch/ahc87874/Fall2021Practice/Project/genoQC2")
+phenodir=("/scratch/ahc87874/Fall2021Practice/Project/pheno2")
+outdir=("/scratch/ahc87874/Fall2021Practice/Project/GEMsingle2/SSRVvsTri")
 
-phenotypes=("Triglycerides")
-#"TotalCholesterol" "LDLCholesterol" "HDLCholesterol"
+phenotypes=("TotalCholesterol")
+#"TotalCholesterol" "LDLCholesterol" "HDLCholesterol" "Triglycerides"
 
 exposures=("Self_Reported_Vegetarian_plus_strict_initial_and24")
-#"Consistent_Self_Reported_Vegetarian_across_all_24hr" 
+#"Consistent_Self_Reported_Vegetarian_across_all_24hr" "Self_Reported_Vegetarian_plus_strict_initial_and24
 
 for j in ${phenotypes[@]} 
         do
