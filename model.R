@@ -18,6 +18,15 @@ Model6.lm <- lm(HDLCholesterol ~ Age + Sex + BMI + SSRV, data = pheno)
 Model7.lm <- lm(Triglycerides ~ Age + Sex + BMI + CSRV, data = pheno)
 Model8.lm <- lm(Triglycerides ~ Age + Sex + BMI + SSRV, data = pheno)
 
+summary(Model1.lm)
+summary(Model2.lm)
+summary(Model3.lm)
+summary(Model4.lm)
+summary(Model5.lm)
+summary(Model6.lm)
+summary(Model7.lm)
+summary(Model8.lm)
+
 #=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
 ##Total Cholesterol
@@ -45,23 +54,23 @@ Model8.lm <- lm(Triglycerides ~ Age + Sex + SSRV, data = pheno)
 #Males Only
 ##Total Cholesterol
 ##Covariates Age, Sex, BMI, CSRV/SSRV
-Model1.lm <- lm(TotalCholesterol ~ Age + Sex + BMI + CSRV, data = pheno[pheno$Sex=="Male",])
-Model2.lm <- lm(TotalCholesterol ~ Age + Sex + BMI + SSRV, data = pheno[pheno$Sex=="Male",])
+Model1.lm <- lm(TotalCholesterol ~ Age + BMI + CSRV, data = pheno[pheno$Sex=="Male",])
+Model2.lm <- lm(TotalCholesterol ~ Age + BMI + SSRV, data = pheno[pheno$Sex=="Male",])
 
 ##LDL Cholesterol
 ##Covariates Age, Sex, BMI, CSRV/SSRV
-Model3.lm <- lm(LDLCholesterol ~ Age + Sex + BMI + CSRV, data = pheno[pheno$Sex=="Male",])
-Model4.lm <- lm(LDLCholesterol ~ Age + Sex + BMI + SSRV, data = pheno[pheno$Sex=="Male",])
+Model3.lm <- lm(LDLCholesterol ~ Age + BMI + CSRV, data = pheno[pheno$Sex=="Male",])
+Model4.lm <- lm(LDLCholesterol ~ Age + BMI + SSRV, data = pheno[pheno$Sex=="Male",])
 
 ##HDL Cholesterol
 ##Covariates Age, Sex, BMI, CSRV/SSRV
-Model5.lm <- lm(HDLCholesterol ~ Age + Sex + BMI + CSRV, data = pheno[pheno$Sex=="Male",])
-Model6.lm <- lm(HDLCholesterol ~ Age + Sex + BMI + SSRV, data = pheno[pheno$Sex=="Male",])
+Model5.lm <- lm(HDLCholesterol ~ Age + BMI + CSRV, data = pheno[pheno$Sex=="Male",])
+Model6.lm <- lm(HDLCholesterol ~ Age + BMI + SSRV, data = pheno[pheno$Sex=="Male",])
 
 ##Triglycerides
 ##Covariates Age, Sex, BMI, CSRV/SSRV
-Model7.lm <- lm(Triglycerides ~ Age + Sex + BMI + CSRV, data = pheno[pheno$Sex=="Male",])
-Model8.lm <- lm(Triglycerides ~ Age + Sex + BMI + SSRV, data = pheno[pheno$Sex=="Male",])
+Model7.lm <- lm(Triglycerides ~ Age + BMI + CSRV, data = pheno[pheno$Sex=="Male",])
+Model8.lm <- lm(Triglycerides ~ Age + BMI + SSRV, data = pheno[pheno$Sex=="Male",])
 
 #=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
@@ -91,44 +100,44 @@ Model8.lm <- lm(Triglycerides ~ Age + Sex + SSRV, data = pheno[pheno$Sex=="Male"
 #Females Only
 ##Total Cholesterol
 ##Covariates Age, Sex, BMI, CSRV/SSRV
-Model1.lm <- lm(TotalCholesterol ~ Age + Sex + BMI + CSRV, data = pheno[pheno$Sex=="Female",])
-Model2.lm <- lm(TotalCholesterol ~ Age + Sex + BMI + SSRV, data = pheno[pheno$Sex=="Female",])
+Model1.lm <- lm(TotalCholesterol ~ Age + CSRV, data = pheno[pheno$Sex=="Female",])
+Model2.lm <- lm(TotalCholesterol ~ Age + SSRV, data = pheno[pheno$Sex=="Female",])
 
 ##LDL Cholesterol
 ##Covariates Age, Sex, BMI, CSRV/SSRV
-Model3.lm <- lm(LDLCholesterol ~ Age + Sex + BMI + CSRV, data = pheno[pheno$Sex=="Female",])
-Model4.lm <- lm(LDLCholesterol ~ Age + Sex + BMI + SSRV, data = pheno[pheno$Sex=="Female",])
+Model3.lm <- lm(LDLCholesterol ~ Age + CSRV, data = pheno[pheno$Sex=="Female",])
+Model4.lm <- lm(LDLCholesterol ~ Age + SSRV, data = pheno[pheno$Sex=="Female",])
 
 ##HDL Cholesterol
 ##Covariates Age, Sex, BMI, CSRV/SSRV
-Model5.lm <- lm(HDLCholesterol ~ Age + Sex + BMI + CSRV, data = pheno[pheno$Sex=="Female",])
-Model6.lm <- lm(HDLCholesterol ~ Age + Sex + BMI + SSRV, data = pheno[pheno$Sex=="Female",])
+Model5.lm <- lm(HDLCholesterol ~ Age + CSRV, data = pheno[pheno$Sex=="Female",])
+Model6.lm <- lm(HDLCholesterol ~ Age + SSRV, data = pheno[pheno$Sex=="Female",])
 
 ##Triglycerides
 ##Covariates Age, Sex, BMI, CSRV/SSRV
-Model7.lm <- lm(Triglycerides ~ Age + Sex + BMI + CSRV, data = pheno[pheno$Sex=="Female",])
-Model8.lm <- lm(Triglycerides ~ Age + Sex + BMI + SSRV, data = pheno[pheno$Sex=="Female",])
+Model7.lm <- lm(Triglycerides ~ Age + CSRV, data = pheno[pheno$Sex=="Female",])
+Model8.lm <- lm(Triglycerides ~ Age + SSRV, data = pheno[pheno$Sex=="Female",])
 
 #=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
 #Females Only
 ##Total Cholesterol
 ##Covariates Age, Sex, CSRV/SSRV
-Model1.lm <- lm(TotalCholesterol ~ Age + Sex + CSRV, data = pheno[pheno$Sex=="Female",])
-Model2.lm <- lm(TotalCholesterol ~ Age + Sex + SSRV, data = pheno[pheno$Sex=="Female",])
+Model1.lm <- lm(TotalCholesterol ~ Age + CSRV, data = pheno[pheno$Sex=="Female",])
+Model2.lm <- lm(TotalCholesterol ~ Age + SSRV, data = pheno[pheno$Sex=="Female",])
 
 ##LDL Cholesterol
 ##Covariates Age, Sex, CSRV/SSRV
-Model3.lm <- lm(LDLCholesterol ~ Age + Sex + CSRV, data = pheno[pheno$Sex=="Female",])
-Model4.lm <- lm(LDLCholesterol ~ Age + Sex + SSRV, data = pheno[pheno$Sex=="Female",])
+Model3.lm <- lm(LDLCholesterol ~ Age + CSRV, data = pheno[pheno$Sex=="Female",])
+Model4.lm <- lm(LDLCholesterol ~ Age + SSRV, data = pheno[pheno$Sex=="Female",])
 
 ##HDL Cholesterol
 ##Covariates Age, Sex, CSRV/SSRV
-Model5.lm <- lm(HDLCholesterol ~ Age + Sex + CSRV, data = pheno[pheno$Sex=="Female",])
-Model6.lm <- lm(HDLCholesterol ~ Age + Sex + SSRV, data = pheno[pheno$Sex=="Female",])
+Model5.lm <- lm(HDLCholesterol ~ Age + CSRV, data = pheno[pheno$Sex=="Female",])
+Model6.lm <- lm(HDLCholesterol ~ Age + SSRV, data = pheno[pheno$Sex=="Female",])
 
 ##Triglycerides
 ##Covariates Age, Sex, CSRV/SSRV
-Model7.lm <- lm(Triglycerides ~ Age + Sex + CSRV, data = pheno[pheno$Sex=="Female",])
-Model8.lm <- lm(Triglycerides ~ Age + Sex + SSRV, data = pheno[pheno$Sex=="Female",])
+Model7.lm <- lm(Triglycerides ~ Age + CSRV, data = pheno[pheno$Sex=="Female",])
+Model8.lm <- lm(Triglycerides ~ Age + SSRV, data = pheno[pheno$Sex=="Female",])
 
