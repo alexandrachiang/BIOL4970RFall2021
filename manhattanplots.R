@@ -54,7 +54,7 @@ if (i == 1) {
 plotoutputfile<-paste(outdir, "/LDLCholesterolxSelf_Reported_Vegetarian_plus_strict_initial_and24.png", sep="")
 
 png(filename=plotoutputfile, type="cairo")
-manhattan(infileall, ylim=c(0,200), col = c("deepskyblue1", "black"), cex = 0.6, suggestiveline = T, genomewideline = T, highlight = , annotatePval = )
+manhattan(infileall, ylim=c(0,200), col = c("deepskyblue1", "black"), cex = 0.6, suggestiveline = T, genomewideline = T, main = "Manhattan Plot of LDL x SSRV", highlight = , annotatePval = )
 #firebrick1 deepskyblue1
 dev.off()
 
