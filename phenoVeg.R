@@ -35,6 +35,7 @@ new3<-as_tibble(inner_join(new2, pan2, by="IID"))
 #Complete cases
 new4<-new3[complete.cases(new3),]
 #removes 26,173
+#163,712
 
 #=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
