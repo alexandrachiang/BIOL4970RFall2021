@@ -39,7 +39,6 @@ pheno2<-bd_join4%>%select(f.eid,
                           f.21001.0.0, f.30690.0.0, f.30780.0.0,
 			  f.30760.0.0, f.30870.0.0
                           )
-#TFAP = PUFA to total fatty acid percentage
 
 colnames(pheno2)<-c("IID",
                     "BMI", "TotalCholesterol", "LDLCholesterol",
