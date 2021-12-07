@@ -158,6 +158,9 @@ new4<-new3[complete.cases(new3),]
 #163,712
 
 #=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+FID<-new4$IID
+new4<-bind_cols(FID,new4)
+colnames(new4)[1]<-"FID"
 
 participants <- new4 %>% select("FID", "IID")
 participants$FID<-participants$IID
