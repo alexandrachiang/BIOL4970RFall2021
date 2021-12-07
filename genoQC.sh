@@ -22,7 +22,7 @@ echo "-=-=-=-=-=-=-=-STEP 1-=-=-=-=-=-=-=-\n\n"
 
 genoindir=("/scratch/ahc87874/bgen_v1.2_UKBsource")
 mfiscoredir=("/scratch/ahc87874/Fall2021Practice/UKBpgen/mfi")
-outdir=("/scratch/ahc87874/Fall2021Practice/Project/genoQC")
+outdir=("/scratch/ahc87874/Fall2021Practice/Project/genoQC2")
 mkdir -p $outdir
 
 plink2 \
@@ -35,7 +35,7 @@ plink2 \
 --maf 0.01 \
 --autosome \
 --maj-ref \
---keep /scratch/ahc87874/Fall2021Practice/Project/pheno/GWAS_phenoQC_IDS_M1_Veg.txt \
+--keep /scratch/ahc87874/Fall2021Practice/Project/pheno2/GWAS_phenoQC_IDS_M1_Veg.txt \
 --max-alleles 2 \
 --export bgen-1.2 bits=8 \
 --out "$outdir"/chr"$i"
