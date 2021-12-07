@@ -71,7 +71,8 @@ outdir="/scratch/ahc87874/Fall2021Practice/Project/manplots"
 plotoutputfile<-paste(outdir, "/TriglyceridesxSelf_Reported_Vegetarian_plus_strict_initial_and24.png", sep="")
 
 png(filename=plotoutputfile, type="cairo")
-manhattan(infileall, ylim=c(0,200), col = c("deepskyblue1", "black"), cex = 0.6, suggestiveline = T, genomewideline = T, main = "Manhattan Plot of TAG x SSRV", highlight = newdata, annotatePval = pvalue)
+manhattan(infileall, ylim=c(0,200), col = c("deepskyblue1", "black"), cex = 0.6, suggestiveline = T, genomewideline = T, main = "Manhattan Plot of TAG x SSRV", annotatePval = pvalue)
+#highlight = newdata
 #firebrick1 deepskyblue1
 dev.off()
 
