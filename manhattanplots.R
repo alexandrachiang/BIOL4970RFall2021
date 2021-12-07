@@ -50,3 +50,9 @@ plotoutputfile<-paste(outdir, "/TotalCholesterolxConsistent_Self_Reported_Vegeta
 png(filename=plotoutputfile, type="cairo")
 manhattan(infileall, ylim=c(0,200), col = c("firebrick1", "black"), cex = 0.6)
 dev.off()
+
+#Make table of sig SNPs (P < 5e-8)
+sigSNPs<-infileall%>%filter(P<=5e-8)
+write.table(sigSNPs, 
+	paste(outdir, "/TotalxCSRVsigSNPs", sep=""),
+	row.names=FALSE, quote=FALSE)
