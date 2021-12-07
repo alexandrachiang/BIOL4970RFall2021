@@ -2,6 +2,7 @@ library(tidyverse)
 library(qqman)
 
 indir="/scratch/ahc87874/Fall2021Practice/Project/GEM/TotalCholesterol"
+outdir="/scratch/ahc87874/Fall2021Practice/Project/manplots"
 
 for (i in 1:22) {
 infile<-read.table(paste(indir, paste("TotalCholesterolxConsistent_Self_Reported_Vegetarian_across_all_24hr-chr", i, sep=""), sep="/"), header=TRUE, stringsAsFactors=FALSE)
@@ -44,9 +45,7 @@ if (i == 1) {
 }
 
 #Make manhattan plot
-plotoutputpath<-paste(indir, "/plot", sep="")
-dir.create(plotoutputpath, showWarnings=FALSE)
-plotoutputfile<-paste(plotoutputpath, "/TotalCholesterolxConsistent_Self_Reported_Vegetarian_across_all_24hr.png", sep="")
+plotoutputfile<-paste(outdir, "/TotalCholesterolxConsistent_Self_Reported_Vegetarian_across_all_24hr.png", sep="")
 
 png(filename=plotoutputfile, type="cairo")
 manhattan(infileall, ylim=c(0,200), col = c("firebrick1", "black"), cex = 0.6)
