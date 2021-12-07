@@ -1,14 +1,16 @@
 library(tidyverse)
 library(qqman)
 
-indir="/scratch/ahc87874/Fall2021Practice/Project/GEM/TotalCholesterol"
+indir="/scratch/ahc87874/Fall2021Practice/Project/GEMsingle/SSRVvsTri/Triglycerides"
+#"/scratch/ahc87874/Fall2021Practice/Project/GEM/TotalCholesterol" "/scratch/ahc87874/Fall2021Practice/Project/GEMsingle/SSRVvsTri/Triglycerides"
 #"TotalCholesterol" "LDLCholesterol" "HDLCholesterol" "Triglycerides"
 outdir="/scratch/ahc87874/Fall2021Practice/Project/manplots"
 
 for (i in 1:22) {
-infile<-read.table(paste(indir, paste("TotalCholesterolxSelf_Reported_Vegetarian_plus_strict_initial_and24-chr", i, sep=""), sep="/"), header=TRUE, stringsAsFactors=FALSE)
+infile<-read.table(paste(indir, paste("TriglyceridesxSelf_Reported_Vegetarian_plus_strict_initial_and24-chr", i, sep=""), sep="/"), header=TRUE, stringsAsFactors=FALSE)
 #"TotalCholesterolxConsistent_Self_Reported_Vegetarian_across_all_24hr-chr" "TotalCholesterolxSelf_Reported_Vegetarian_plus_strict_initial_and24-chr"
 #"LDLCholesterolxConsistent_Self_Reported_Vegetarian_across_all_24hr-chr" "LDLCholesterolxSelf_Reported_Vegetarian_plus_strict_initial_and24-chr"
+#"TriglyceridesxSelf_Reported_Vegetarian_plus_strict_initial_and24-chr"	
 	
 infile<-as_tibble(infile) 
   
@@ -49,7 +51,7 @@ if (i == 1) {
 }
 
 #Make manhattan plot
-plotoutputfile<-paste(outdir, "/TotalCholesterolxSelf_Reported_Vegetarian_plus_strict_initial_and24.png", sep="")
+plotoutputfile<-paste(outdir, "/TriglyceridesxSelf_Reported_Vegetarian_plus_strict_initial_and24.png", sep="")
 
 png(filename=plotoutputfile, type="cairo")
 manhattan(infileall, ylim=c(0,200), col = c("deepskyblue1", "black"), cex = 0.6)
@@ -59,5 +61,5 @@ dev.off()
 #Make table of sig SNPs (P < 5e-8)
 sigSNPs<-infileall%>%filter(P<=5e-8)
 write.table(sigSNPs, 
-	paste(outdir, "/TotalxSSRVsigSNPs.txt", sep=""),
+	paste(outdir, "/TrixSSRVsigSNPs.txt", sep=""),
 	row.names=FALSE, quote=FALSE)
