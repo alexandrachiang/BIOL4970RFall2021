@@ -50,4 +50,3 @@ plotoutputfile<-paste(outdir, "/TotalCholesterolxConsistent_Self_Reported_Vegeta
 png(filename=plotoutputfile, type="cairo")
 manhattan(infileall, ylim=c(0,200), col = c("firebrick1", "black"), cex = 0.6)
 dev.off()
-}
