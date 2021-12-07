@@ -4,7 +4,6 @@ library(qqman)
 indir="/scratch/ahc87874/Fall2021Practice/Project/GEM/LDLCholesterol"
 #"/scratch/ahc87874/Fall2021Practice/Project/GEM/TotalCholesterol" "/scratch/ahc87874/Fall2021Practice/Project/GEM/LDLCholesterol" "/scratch/ahc87874/Fall2021Practice/Project/GEMsingle/SSRVvsTri/Triglycerides"
 #"TotalCholesterol" "LDLCholesterol" "HDLCholesterol" "Triglycerides"
-outdir="/scratch/ahc87874/Fall2021Practice/Project/manplots"
 
 for (i in 1:22) {
 infile<-read.table(paste(indir, paste("LDLCholesterolxSelf_Reported_Vegetarian_plus_strict_initial_and24-chr", i, sep=""), sep="/"), header=TRUE, stringsAsFactors=FALSE)
@@ -50,16 +49,36 @@ if (i == 1) {
 
 }
 
-#Make manhattan plot
-plotoutputfile<-paste(outdir, "/LDLCholesterolxSelf_Reported_Vegetarian_plus_strict_initial_and24.png", sep="")
-
-png(filename=plotoutputfile, type="cairo")
-manhattan(infileall, ylim=c(0,200), col = c("deepskyblue1", "black"), cex = 0.6, suggestiveline = T, genomewideline = T, main = "Manhattan Plot of LDL x SSRV", highlight = , annotatePval = )
-#firebrick1 deepskyblue1
-dev.off()
-
+outdir="/scratch/ahc87874/Fall2021Practice/Project/SNPs"
 #Make table of sig SNPs (P < 5e-8)
 sigSNPs<-infileall%>%filter(P<=5e-8)
 write.table(sigSNPs, 
-	paste(outdir, "/LDLxSSRVsigSNPs.txt", sep=""),
+	paste(outdir, "/TrixSSRVsigSNPs.txt", sep=""),
 	row.names=FALSE, quote=FALSE)
+	
+#Make table of top 10 SNPs
+attach(infileall)
+newdata <- infileall[order(P),]
+newdata <- newdata[1:10,]
+write.table(newdata, 
+	paste(outdir, "/TrixSSRVtopSNPs.txt", sep=""),
+	row.names=FALSE, quote=FALSE)
+	
+pvalue<-newdata[10,3]
+
+#Make manhattan plot
+outdir="/scratch/ahc87874/Fall2021Practice/Project/manplots"
+plotoutputfile<-paste(outdir, "/TriglyceridesxSelf_Reported_Vegetarian_plus_strict_initial_and24.png", sep="")
+
+png(filename=plotoutputfile, type="cairo")
+manhattan(infileall, ylim=c(0,200), col = c("deepskyblue1", "black"), cex = 0.6, suggestiveline = T, genomewideline = T, main = "Manhattan Plot of TAG x SSRV", highlight = newdata, annotatePval = pvalue)
+#firebrick1 deepskyblue1
+dev.off()
+
+#Make qq plot
+outdir="/scratch/ahc87874/Fall2021Practice/Project/qqplots"
+plotoutputfile<-paste(outdir, "/TriglyceridesxSelf_Reported_Vegetarian_plus_strict_initial_and24.png", sep="")
+
+png(filename=plotoutputfile, type="cairo")
+qq(gwasResults$P, main = "Q-Q plot of TAG x SSRV GWAS p-values")
+dev.off()
