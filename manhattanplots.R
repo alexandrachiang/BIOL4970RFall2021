@@ -54,5 +54,5 @@ dev.off()
 #Make table of sig SNPs (P < 5e-8)
 sigSNPs<-infileall%>%filter(P<=5e-8)
 write.table(sigSNPs, 
-	paste(outdir, "/TotalxCSRVsigSNPs", sep=""),
+	paste(outdir, "/TotalxCSRVsigSNPs.txt", sep=""),
 	row.names=FALSE, quote=FALSE)
