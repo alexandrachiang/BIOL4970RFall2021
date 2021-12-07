@@ -8,6 +8,8 @@
 #SBATCH --output=GEMSSRVvsTotal.%j.out
 #SBATCH --error=GEMSSRVvsTotal.%j.err
 #SBATCH --array=1-22
+#SBATCH --mail-user=alexandrachiang@uga.edu
+#SBATCH --mail-type=ALL
 
 i=$SLURM_ARRAY_TASK_ID
 
