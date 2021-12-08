@@ -72,8 +72,8 @@ pvalue<-newdata[10,3]
 outdir="/scratch/ahc87874/Fall2021Practice/Project/manplots"
 plotoutputfile<-paste(outdir, "/TotalCholesterolxConsistent_Self_Reported_Vegetarian_across_all_24hr.png", sep="")
 
-png(filename=plotoutputfile, type="cairo")
-manhattan(infileall, ylim=c(0,200), col = c("firebrick1", "black"), suggestiveline = T, genomewideline = T, main = "Manhattan Plot of Total x CSRV", annotatePval = 0.001)
+png(filename=plotoutputfile, type="cairo", width=600, height=300)
+manhattan(infileall, ylim=c(0,350), col = c("firebrick1", "black"), suggestiveline = T, genomewideline = T, main = "Manhattan Plot of Total x CSRV", annotatePval = 5e-8)
 #highlight = newdata
 #firebrick1 deepskyblue1
 dev.off()
@@ -136,8 +136,8 @@ pvalue<-newdata[10,3]
 outdir="/scratch/ahc87874/Fall2021Practice/Project/manplots"
 plotoutputfile<-paste(outdir, "/TotalCholesterolxSelf_Reported_Vegetarian_plus_strict_initial_and24.png", sep="")
 
-png(filename=plotoutputfile, type="cairo")
-manhattan(infileall, ylim=c(0,200), col = c("deepskyblue1", "black"), suggestiveline = T, genomewideline = T, main = "Manhattan Plot of Total x SSRV", annotatePval = 0.001)
+png(filename=plotoutputfile, type="cairo", width=600, height=300)
+manhattan(infileall, ylim=c(0,350), col = c("deepskyblue1", "black"), suggestiveline = T, genomewideline = T, main = "Manhattan Plot of Total x SSRV", annotatePval = 5e-8)
 #highlight = newdata
 #firebrick1 deepskyblue1
 dev.off()
@@ -195,8 +195,8 @@ pvalue<-newdata[10,3]
 outdir="/scratch/ahc87874/Fall2021Practice/Project/manplots"
 plotoutputfile<-paste(outdir, "/LDLCholesterolxConsistent_Self_Reported_Vegetarian_across_all_24hr.png", sep="")
 
-png(filename=plotoutputfile, type="cairo")
-manhattan(infileall, ylim=c(0,200), col = c("firebrick1", "black"), suggestiveline = T, genomewideline = T, main = "Manhattan Plot of LDL x CSRV", annotatePval = 0.001)
+png(filename=plotoutputfile, type="cairo", width=600, height=300)
+manhattan(infileall, ylim=c(0,350), col = c("firebrick1", "black"), suggestiveline = T, genomewideline = T, main = "Manhattan Plot of LDL x CSRV", annotatePval = 5e-8)
 dev.off()
 
 #Make qq plot
@@ -252,8 +252,8 @@ pvalue<-newdata[10,3]
 outdir="/scratch/ahc87874/Fall2021Practice/Project/manplots"
 plotoutputfile<-paste(outdir, "/LDLCholesterolxSelf_Reported_Vegetarian_plus_strict_initial_and24.png", sep="")
 
-png(filename=plotoutputfile, type="cairo")
-manhattan(infileall, ylim=c(0,200), col = c("deepskyblue1", "black"), suggestiveline = T, genomewideline = T, main = "Manhattan Plot of LDL x SSRV", annotatePval = 0.001)
+png(filename=plotoutputfile, type="cairo", width=600, height=300)
+manhattan(infileall, ylim=c(0,350), col = c("deepskyblue1", "black"), suggestiveline = T, genomewideline = T, main = "Manhattan Plot of LDL x SSRV", annotatePval = 5e-8)
 dev.off()
 
 #Make qq plot
@@ -309,8 +309,8 @@ pvalue<-newdata[10,3]
 outdir="/scratch/ahc87874/Fall2021Practice/Project/manplots"
 plotoutputfile<-paste(outdir, "/TriglyceridesxSelf_Reported_Vegetarian_plus_strict_initial_and24.png", sep="")
 
-png(filename=plotoutputfile, type="cairo")
-manhattan(infileall, ylim=c(0,200), col = c("deepskyblue1", "black"), suggestiveline = T, genomewideline = T, main = "Manhattan Plot of TAG x SSRV", annotatePval = 0.001)
+png(filename=plotoutputfile, type="cairo", width=600, height=300)
+manhattan(infileall, ylim=c(0,350), col = c("deepskyblue1", "black"), suggestiveline = T, genomewideline = T, main = "Manhattan Plot of TAG x SSRV", annotatePval = 5e-8)
 dev.off()
 
 #Make qq plot
