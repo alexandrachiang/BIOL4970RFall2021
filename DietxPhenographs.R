@@ -33,7 +33,7 @@ AgeHist <- ggplot(pheno, aes(x = Age, fill = Sex)) +
   labs(fill = "Sex",
        x = "Age",
        y = "Count",
-       title = "Distriion of Age") + 
+       title = "Distribution of Age") + 
   theme(plot.title = element_text(hjust = 0.5))
   
 BMIHist <- ggplot(pheno, aes(x = BMI, fill = Sex)) +
@@ -42,7 +42,7 @@ BMIHist <- ggplot(pheno, aes(x = BMI, fill = Sex)) +
   labs(fill = "Sex",
        x = "BMI",
        y = "Count",
-       title = "Distriion of BMI") + 
+       title = "Distribution of BMI") + 
   theme(plot.title = element_text(hjust = 0.5))
    
 #=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
