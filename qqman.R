@@ -320,3 +320,69 @@ plotoutputfile<-paste(outdir, "/TriglyceridesxSelf_Reported_Vegetarian_plus_stri
 png(filename=plotoutputfile, type="cairo")
 qq(gwasResults$P, main = "Q-Q plot of TAG x SSRV GWAS p-values")
 dev.off()
+
+#=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+#TotalxSSRV 2
+indir="/scratch/ahc87874/Fall2021Practice/Project/GEMsingle2/SSRVvsTotal/TotalCholesterol"
+#"/scratch/ahc87874/Fall2021Practice/Project/GEM/TotalCholesterol" "/scratch/ahc87874/Fall2021Practice/Project/GEM/LDLCholesterol" "/scratch/ahc87874/Fall2021Practice/Project/GEMsingle/SSRVvsTri/Triglycerides"
+#"TotalCholesterol" "LDLCholesterol" "HDLCholesterol" "Triglycerides"
+
+for (i in 1:22) {
+infile<-read.table(paste(indir, paste("TotalCholesterolxSelf_Reported_Vegetarian_plus_strict_initial_and24-chr", i, sep=""), sep="/"), header=TRUE, stringsAsFactors=FALSE)
+#"TotalCholesterolxConsistent_Self_Reported_Vegetarian_across_all_24hr-chr" "TotalCholesterolxSelf_Reported_Vegetarian_plus_strict_initial_and24-chr"
+#"LDLCholesterolxConsistent_Self_Reported_Vegetarian_across_all_24hr-chr" "LDLCholesterolxSelf_Reported_Vegetarian_plus_strict_initial_and24-chr"
+#"TriglyceridesxSelf_Reported_Vegetarian_plus_strict_initial_and24-chr"	
+	
+infile<-as_tibble(infile) 
+  
+#Subset data
+infile1<-infile%>%select(CHR, POS, robust_P_Value_Joint, RSID)
+
+#Get qqman format
+colnames(infile1)<-c("CHR", "BP", "P", "SNP")
+
+#Add to input
+if (i == 1) {
+	infileall<-infile1
+} else {
+	infileall<-rbind(infileall, infile1)
+}
+
+}
+
+outdir="/scratch/ahc87874/Fall2021Practice/Project/SNPs"
+#Make table of sig SNPs (P < 5e-8)
+sigSNPs<-infileall%>%filter(P<=5e-8)
+write.table(sigSNPs, 
+	paste(outdir, "/TotalxSSRVsigSNPs2.txt", sep=""),
+	row.names=FALSE, quote=FALSE)
+	
+#Make table of top 10 SNPs
+attach(infileall)
+newdata <- infileall[order(P),]
+newdata <- newdata[1:10,]
+write.table(newdata, 
+	paste(outdir, "/TotalxSSRVtopSNPs2.txt", sep=""),
+	row.names=FALSE, quote=FALSE)
+	
+pvalue<-newdata[10,3]
+
+#Make manhattan plot
+outdir="/scratch/ahc87874/Fall2021Practice/Project/manplots"
+plotoutputfile<-paste(outdir, "/TotalCholesterolxSelf_Reported_Vegetarian_plus_strict_initial_and242.png", sep="")
+
+png(filename=plotoutputfile, type="cairo", width=600, height=300)
+manhattan(infileall, ylim=c(0,350), col = c("deepskyblue1", "black"), suggestiveline = T, genomewideline = T, main = "Manhattan Plot of Total x SSRV", annotatePval = 5e-8)
+#highlight = newdata
+#firebrick1 deepskyblue1
+dev.off()
+
+#Make qq plot
+outdir="/scratch/ahc87874/Fall2021Practice/Project/qqplots"
+plotoutputfile<-paste(outdir, "/TotalCholesterolxSelf_Reported_Vegetarian_plus_strict_initial_and242.png", sep="")
+
+png(filename=plotoutputfile, type="cairo")
+qq(gwasResults$P, main = "Q-Q plot of Total x SSRV GWAS p-values")
+dev.off()
+
+#=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
