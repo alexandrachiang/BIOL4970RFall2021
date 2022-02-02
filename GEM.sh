@@ -49,6 +49,7 @@ center6 center7 center8 center9 center10 \
 center11 center12 center13 center14 center15 \
 center16 center17 center18 center20 center21 \
 PC1 PC2 PC3 PC4 PC5 PC6 PC7 PC8 PC9 PC10 \
+--thread 16
 --robust 1 \
 --exposure-names "$e" \
 --out $outdir/$j/"$j"x"$e"-chr"$i"
