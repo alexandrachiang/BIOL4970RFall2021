@@ -117,7 +117,7 @@ if (i == 1) {
 
 outdir="/scratch/ahc87874/Check/SNPs"
 #Make table of sig SNPs (P < 5e-8)
-sigSNPs<-infileall%>%filter(P<=5e-8)
+sigSNPs<-infileall%>%filter(P<=1e-5)
 write.table(sigSNPs, 
 	paste(outdir, "/TotalxSSRVsigSNPs.txt", sep=""),
 	row.names=FALSE, quote=FALSE)
@@ -137,7 +137,7 @@ outdir="/scratch/ahc87874/Check/manplots"
 plotoutputfile<-paste(outdir, "/TotalCholesterolxSelf_Reported_Vegetarian_plus_strict_initial_and24.png", sep="")
 
 png(filename=plotoutputfile, type="cairo", width=600, height=300)
-manhattan(infileall, ylim=c(0,10), col = c("deepskyblue1", "black"), suggestiveline = T, genomewideline = T, main = "Manhattan Plot of SSRVxTotal GWIS", annotatePval = 5e-8)
+manhattan(infileall, ylim=c(0,10), col = c("deepskyblue1", "black"), suggestiveline = T, genomewideline = T, main = "Manhattan Plot of SSRVxTotal GWIS", annotatePval = 1e-5)
 #highlight = newdata
 #firebrick1 deepskyblue1
 dev.off()
