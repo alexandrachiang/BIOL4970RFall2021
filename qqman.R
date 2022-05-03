@@ -52,7 +52,7 @@ if (i == 1) {
 }
 
 outdir="/scratch/ahc87874/Check/SNPs"
-#Make table of sig SNPs (P < 5e-8)
+#Make table of sig SNPs (P < 1e-5)
 sigSNPs<-infileall%>%filter(P<=1e-5)
 write.table(sigSNPs, 
 	paste(outdir, "/TotalxCSRVsigSNPs.txt", sep=""),
@@ -116,7 +116,7 @@ if (i == 1) {
 }
 
 outdir="/scratch/ahc87874/Check/SNPs"
-#Make table of sig SNPs (P < 5e-8)
+#Make table of sig SNPs (P < 1e-5)
 sigSNPs<-infileall%>%filter(P<=1e-5)
 write.table(sigSNPs, 
 	paste(outdir, "/TotalxSSRVsigSNPs.txt", sep=""),
@@ -175,8 +175,8 @@ if (i == 1) {
 }
 
 outdir="/scratch/ahc87874/Check/SNPs"
-#Make table of sig SNPs (P < 5e-8)
-sigSNPs<-infileall%>%filter(P<=5e-8)
+#Make table of sig SNPs (P < 1e-5)
+sigSNPs<-infileall%>%filter(P<=1e-5)
 write.table(sigSNPs, 
 	paste(outdir, "/LDLxCSRVsigSNPs.txt", sep=""),
 	row.names=FALSE, quote=FALSE)
@@ -196,7 +196,7 @@ outdir="/scratch/ahc87874/Check/manplots"
 plotoutputfile<-paste(outdir, "/LDLCholesterolxConsistent_Self_Reported_Vegetarian_across_all_24hr.png", sep="")
 
 png(filename=plotoutputfile, type="cairo", width=600, height=300)
-manhattan(infileall, ylim=c(0,10), col = c("firebrick1", "black"), suggestiveline = T, genomewideline = T, main = "Manhattan Plot of CSRVxLDL GWIS", annotatePval = 5e-8)
+manhattan(infileall, ylim=c(0,10), col = c("firebrick1", "black"), suggestiveline = T, genomewideline = T, main = "Manhattan Plot of CSRVxLDL GWIS", annotatePval = 1e-5)
 dev.off()
 
 #Make qq plot
@@ -232,8 +232,8 @@ if (i == 1) {
 }
 
 outdir="/scratch/ahc87874/Check/SNPs"
-#Make table of sig SNPs (P < 5e-8)
-sigSNPs<-infileall%>%filter(P<=5e-8)
+#Make table of sig SNPs (P < 1e-5)
+sigSNPs<-infileall%>%filter(P<=1e-5)
 write.table(sigSNPs, 
 	paste(outdir, "/LDLxSSRVsigSNPs.txt", sep=""),
 	row.names=FALSE, quote=FALSE)
@@ -253,7 +253,7 @@ outdir="/scratch/ahc87874/Check/manplots"
 plotoutputfile<-paste(outdir, "/LDLCholesterolxSelf_Reported_Vegetarian_plus_strict_initial_and24.png", sep="")
 
 png(filename=plotoutputfile, type="cairo", width=600, height=300)
-manhattan(infileall, ylim=c(0,10), col = c("deepskyblue1", "black"), suggestiveline = T, genomewideline = T, main = "Manhattan Plot of SSRVxLDL GWIS", annotatePval = 5e-8)
+manhattan(infileall, ylim=c(0,10), col = c("deepskyblue1", "black"), suggestiveline = T, genomewideline = T, main = "Manhattan Plot of SSRVxLDL GWIS", annotatePval = 1e-5)
 dev.off()
 
 #Make qq plot
@@ -290,8 +290,8 @@ if (i == 1) {
 }
 
 outdir="/scratch/ahc87874/Check/SNPs"
-#Make table of sig SNPs (P < 5e-8)
-sigSNPs<-infileall%>%filter(P<=5e-8)
+#Make table of sig SNPs (P < 1e-5)
+sigSNPs<-infileall%>%filter(P<=1e-5)
 write.table(sigSNPs, 
 	paste(outdir, "/HDLxCSRVsigSNPs.txt", sep=""),
 	row.names=FALSE, quote=FALSE)
@@ -311,7 +311,7 @@ outdir="/scratch/ahc87874/Check/manplots"
 plotoutputfile<-paste(outdir, "/HDLCholesterolxConsistent_Self_Reported_Vegetarian_across_all_24hr.png", sep="")
 
 png(filename=plotoutputfile, type="cairo", width=600, height=300)
-manhattan(infileall, ylim=c(0,10), col = c("firebrick1", "black"), suggestiveline = T, genomewideline = T, main = "Manhattan Plot of CSRVxHDL GWIS", annotatePval = 5e-8)
+manhattan(infileall, ylim=c(0,10), col = c("firebrick1", "black"), suggestiveline = T, genomewideline = T, main = "Manhattan Plot of CSRVxHDL GWIS", annotatePval = 1e-5)
 dev.off()
 
 #Make qq plot
@@ -347,8 +347,8 @@ if (i == 1) {
 }
 
 outdir="/scratch/ahc87874/Check/SNPs"
-#Make table of sig SNPs (P < 5e-8)
-sigSNPs<-infileall%>%filter(P<=5e-8)
+#Make table of sig SNPs (P < 1e-5)
+sigSNPs<-infileall%>%filter(P<=1e-5)
 write.table(sigSNPs, 
 	paste(outdir, "/HDLxSSRVsigSNPs.txt", sep=""),
 	row.names=FALSE, quote=FALSE)
@@ -368,7 +368,7 @@ outdir="/scratch/ahc87874/Check/manplots"
 plotoutputfile<-paste(outdir, "/HDLCholesterolxSelf_Reported_Vegetarian_plus_strict_initial_and24.png", sep="")
 
 png(filename=plotoutputfile, type="cairo", width=600, height=300)
-manhattan(infileall, ylim=c(0,10), col = c("deepskyblue1", "black"), suggestiveline = T, genomewideline = T, main = "Manhattan Plot of SSRVxHDL GWIS", annotatePval = 5e-8)
+manhattan(infileall, ylim=c(0,10), col = c("deepskyblue1", "black"), suggestiveline = T, genomewideline = T, main = "Manhattan Plot of SSRVxHDL GWIS", annotatePval = 1e-5)
 dev.off()
 
 #Make qq plot
@@ -405,8 +405,8 @@ if (i == 1) {
 }
 
 outdir="/scratch/ahc87874/Check/SNPs"
-#Make table of sig SNPs (P < 5e-8)
-sigSNPs<-infileall%>%filter(P<=5e-8)
+#Make table of sig SNPs (P < 1e-5)
+sigSNPs<-infileall%>%filter(P<=1e-5)
 write.table(sigSNPs, 
 	paste(outdir, "/TAGxCSRVsigSNPs.txt", sep=""),
 	row.names=FALSE, quote=FALSE)
@@ -426,7 +426,7 @@ outdir="/scratch/ahc87874/Check/manplots"
 plotoutputfile<-paste(outdir, "/TriglyceridesxConsistent_Self_Reported_Vegetarian_across_all_24hr.png", sep="")
 
 png(filename=plotoutputfile, type="cairo", width=600, height=300)
-manhattan(infileall, ylim=c(0,10), col = c("deepskyblue1", "black"), suggestiveline = T, genomewideline = T, main = "Manhattan Plot of CSRVxTAG GWIS", annotatePval = 5e-8)
+manhattan(infileall, ylim=c(0,10), col = c("deepskyblue1", "black"), suggestiveline = T, genomewideline = T, main = "Manhattan Plot of CSRVxTAG GWIS", annotatePval = 1e-5)
 dev.off()
 
 #Make qq plot
@@ -462,8 +462,8 @@ if (i == 1) {
 }
 
 outdir="/scratch/ahc87874/Check/SNPs"
-#Make table of sig SNPs (P < 5e-8)
-sigSNPs<-infileall%>%filter(P<=5e-8)
+#Make table of sig SNPs (P < 1e-5)
+sigSNPs<-infileall%>%filter(P<=1e-5)
 write.table(sigSNPs, 
 	paste(outdir, "/TAGxSSRVsigSNPs.txt", sep=""),
 	row.names=FALSE, quote=FALSE)
@@ -483,7 +483,7 @@ outdir="/scratch/ahc87874/Check/manplots"
 plotoutputfile<-paste(outdir, "/TriglyceridesxSelf_Reported_Vegetarian_plus_strict_initial_and24.png", sep="")
 
 png(filename=plotoutputfile, type="cairo", width=600, height=300)
-manhattan(infileall, ylim=c(0,10), col = c("deepskyblue1", "black"), suggestiveline = T, genomewideline = T, main = "Manhattan Plot of SSRVxTAG GWIS", annotatePval = 5e-8)
+manhattan(infileall, ylim=c(0,10), col = c("deepskyblue1", "black"), suggestiveline = T, genomewideline = T, main = "Manhattan Plot of SSRVxTAG GWIS", annotatePval = 1e-5)
 dev.off()
 
 #Make qq plot
@@ -493,3 +493,4 @@ plotoutputfile<-paste(outdir, "/TriglyceridesxSelf_Reported_Vegetarian_plus_stri
 png(filename=plotoutputfile, type="cairo")
 qq(infileall$P, main = "Q-Q plot of SSRVxTAG GWIS p-values")
 dev.off()
+
