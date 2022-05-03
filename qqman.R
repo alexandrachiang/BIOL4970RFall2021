@@ -73,7 +73,7 @@ outdir="/scratch/ahc87874/Check/manplots"
 plotoutputfile<-paste(outdir, "/TotalCholesterolxConsistent_Self_Reported_Vegetarian_across_all_24hr.png", sep="")
 
 png(filename=plotoutputfile, type="cairo", width=600, height=300)
-manhattan(infileall, ylim=c(0,10), col = c("firebrick1", "black"), suggestiveline = T, genomewideline = T, main = "Manhattan Plot of CSRVxTotal GWIS", annotatePval = 1e-5)
+manhattan(infileall, ylim=c(0,8), col = c("firebrick1", "black"), suggestiveline = T, genomewideline = T, main = "Manhattan Plot of CSRVxTotal GWIS", annotatePval = 1e-5)
 #highlight = newdata
 #firebrick1 deepskyblue1
 dev.off()
@@ -137,7 +137,7 @@ outdir="/scratch/ahc87874/Check/manplots"
 plotoutputfile<-paste(outdir, "/TotalCholesterolxSelf_Reported_Vegetarian_plus_strict_initial_and24.png", sep="")
 
 png(filename=plotoutputfile, type="cairo", width=600, height=300)
-manhattan(infileall, ylim=c(0,10), col = c("deepskyblue1", "black"), suggestiveline = T, genomewideline = T, main = "Manhattan Plot of SSRVxTotal GWIS", annotatePval = 1e-5)
+manhattan(infileall, ylim=c(0,8), col = c("deepskyblue1", "black"), suggestiveline = T, genomewideline = T, main = "Manhattan Plot of SSRVxTotal GWIS", annotatePval = 1e-5)
 #highlight = newdata
 #firebrick1 deepskyblue1
 dev.off()
@@ -196,7 +196,7 @@ outdir="/scratch/ahc87874/Check/manplots"
 plotoutputfile<-paste(outdir, "/LDLCholesterolxConsistent_Self_Reported_Vegetarian_across_all_24hr.png", sep="")
 
 png(filename=plotoutputfile, type="cairo", width=600, height=300)
-manhattan(infileall, ylim=c(0,10), col = c("firebrick1", "black"), suggestiveline = T, genomewideline = T, main = "Manhattan Plot of CSRVxLDL GWIS", annotatePval = 1e-5)
+manhattan(infileall, ylim=c(0,8), col = c("firebrick1", "black"), suggestiveline = T, genomewideline = T, main = "Manhattan Plot of CSRVxLDL GWIS", annotatePval = 1e-5)
 dev.off()
 
 #Make qq plot
@@ -253,7 +253,7 @@ outdir="/scratch/ahc87874/Check/manplots"
 plotoutputfile<-paste(outdir, "/LDLCholesterolxSelf_Reported_Vegetarian_plus_strict_initial_and24.png", sep="")
 
 png(filename=plotoutputfile, type="cairo", width=600, height=300)
-manhattan(infileall, ylim=c(0,10), col = c("deepskyblue1", "black"), suggestiveline = T, genomewideline = T, main = "Manhattan Plot of SSRVxLDL GWIS", annotatePval = 1e-5)
+manhattan(infileall, ylim=c(0,8), col = c("deepskyblue1", "black"), suggestiveline = T, genomewideline = T, main = "Manhattan Plot of SSRVxLDL GWIS", annotatePval = 1e-5)
 dev.off()
 
 #Make qq plot
@@ -311,7 +311,7 @@ outdir="/scratch/ahc87874/Check/manplots"
 plotoutputfile<-paste(outdir, "/HDLCholesterolxConsistent_Self_Reported_Vegetarian_across_all_24hr.png", sep="")
 
 png(filename=plotoutputfile, type="cairo", width=600, height=300)
-manhattan(infileall, ylim=c(0,10), col = c("firebrick1", "black"), suggestiveline = T, genomewideline = T, main = "Manhattan Plot of CSRVxHDL GWIS", annotatePval = 1e-5)
+manhattan(infileall, ylim=c(0,8), col = c("firebrick1", "black"), suggestiveline = T, genomewideline = T, main = "Manhattan Plot of CSRVxHDL GWIS", annotatePval = 1e-5)
 dev.off()
 
 #Make qq plot
@@ -368,7 +368,7 @@ outdir="/scratch/ahc87874/Check/manplots"
 plotoutputfile<-paste(outdir, "/HDLCholesterolxSelf_Reported_Vegetarian_plus_strict_initial_and24.png", sep="")
 
 png(filename=plotoutputfile, type="cairo", width=600, height=300)
-manhattan(infileall, ylim=c(0,10), col = c("deepskyblue1", "black"), suggestiveline = T, genomewideline = T, main = "Manhattan Plot of SSRVxHDL GWIS", annotatePval = 1e-5)
+manhattan(infileall, ylim=c(0,8), col = c("deepskyblue1", "black"), suggestiveline = T, genomewideline = T, main = "Manhattan Plot of SSRVxHDL GWIS", annotatePval = 1e-5)
 dev.off()
 
 #Make qq plot
@@ -426,7 +426,7 @@ outdir="/scratch/ahc87874/Check/manplots"
 plotoutputfile<-paste(outdir, "/TriglyceridesxConsistent_Self_Reported_Vegetarian_across_all_24hr.png", sep="")
 
 png(filename=plotoutputfile, type="cairo", width=600, height=300)
-manhattan(infileall, ylim=c(0,10), col = c("deepskyblue1", "black"), suggestiveline = T, genomewideline = T, main = "Manhattan Plot of CSRVxTAG GWIS", annotatePval = 1e-5)
+manhattan(infileall, ylim=c(0,8), col = c("deepskyblue1", "black"), suggestiveline = T, genomewideline = T, main = "Manhattan Plot of CSRVxTAG GWIS", annotatePval = 1e-5)
 dev.off()
 
 #Make qq plot
@@ -483,7 +483,7 @@ outdir="/scratch/ahc87874/Check/manplots"
 plotoutputfile<-paste(outdir, "/TriglyceridesxSelf_Reported_Vegetarian_plus_strict_initial_and24.png", sep="")
 
 png(filename=plotoutputfile, type="cairo", width=600, height=300)
-manhattan(infileall, ylim=c(0,10), col = c("deepskyblue1", "black"), suggestiveline = T, genomewideline = T, main = "Manhattan Plot of SSRVxTAG GWIS", annotatePval = 1e-5)
+manhattan(infileall, ylim=c(0,8), col = c("deepskyblue1", "black"), suggestiveline = T, genomewideline = T, main = "Manhattan Plot of SSRVxTAG GWIS", annotatePval = 1e-5)
 dev.off()
 
 #Make qq plot
